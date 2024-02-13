@@ -1,6 +1,8 @@
 import java.util.Random;
 
 public class App {
+    private static Random r = new Random();
+
     public static void main(String[] args) throws Exception {
         System.out.println(hello("World"));
         System.out.println(hello("Dog"));
@@ -18,7 +20,7 @@ public class App {
     }
 
     private static int rand(int min, int max) {
-        return new Random().nextInt(min, max);
+        return r.nextInt(min, max);
     }
 
     private static double kaibeMaksHinnast(double price) {

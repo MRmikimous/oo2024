@@ -5,29 +5,36 @@ public class Main {
         GameBoard gameBoard = new GameBoard(new int[5][10]);
 
         Creature[] creatures = new Creature[2];
-        creatures[0] = new Creature("Player 1", 'o', new Location(2, 3));
+        creatures[0] = new Creature("Player 1", 'x', new Location(2, 3));
         creatures[1] = new Creature("Player 2", 'o', new Location(3, 2));
 
-        Scanner userMove = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
-        System.err.println(gameBoard.stringify(creatures));
         while (exit == false) {
-            char c = userMove.next().charAt(0);
+            System.err.println(gameBoard.stringify(creatures));
+            char c = scanner.next().charAt(0);
 
             if (c == 'q') {
                 exit = true;
             } else if (c == 'w') {
-                creatures[0].moveUp();
+                Movehandler.move(Direction.UP, creatures[0], gameBoard);
             } else if (c == 's') {
-                creatures[0].moveDown();
+                Movehandler.move(Direction.DOWN, creatures[0], gameBoard);
+                // creatures[0].move(Direction.DOWN);
             } else if (c == 'a') {
-                creatures[0].moveLeft();
+                Movehandler.move(Direction.LEFT, creatures[0], gameBoard);
+                // creatures[0].move(Direction.LEFT);
             } else if (c == 'd') {
-                creatures[0].moveRight();
+                Movehandler.move(Direction.RIGHT, creatures[0], gameBoard);
+                // creatures[0].move(Direction.RIGHT);
+            } else {
+                Movehandler.move(creatures[0], gameBoard);
+                // creatures[0].move();
             }
 
-            System.err.println(gameBoard.stringify(creatures));
         }
+
+        scanner.close();
     }
 }

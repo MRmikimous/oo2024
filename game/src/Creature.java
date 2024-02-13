@@ -2,6 +2,7 @@ public class Creature {
     private String _name;
     private char _symbol;
     private Location _location;
+    private Direction _direction;
 
     public Creature(String name, char symbol, Location location) {
         this._name = name;
@@ -48,4 +49,28 @@ public class Creature {
     public void moveRight() {
         this._location.x++;
     }
+
+    public void move(Direction direction) {
+        this._direction = direction;
+
+        switch (direction) {
+            case UP -> this.moveUp();
+            case DOWN -> this.moveDown();
+            case LEFT -> this.moveLeft();
+            case RIGHT -> this.moveRight();
+        }
+    }
+
+    public void move() {
+        this.move(this._direction);
+    }
+
+    public Direction direction() {
+        return _direction;
+    }
+
+    public void direction(Direction direction) {
+        this._direction = direction;
+    }
+
 }
