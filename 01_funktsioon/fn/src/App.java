@@ -7,6 +7,7 @@ public class App {
 
         System.out.println(rand(0, 100));
         System.out.println(rand(3, 55));
+        System.out.println(rand(-50, 0));
 
         System.out.println(kaibeMaksHinnast(2.3));
         System.out.println(kaibeMaksHinnast(74.32));
