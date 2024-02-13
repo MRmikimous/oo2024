@@ -3,6 +3,12 @@ public class Creature {
     private char _symbol;
     private Location _location;
 
+    public Creature(String name, char symbol, Location location) {
+        this._name = name;
+        this._symbol = symbol;
+        this._location = location;
+    }
+
     public String name() {
         return _name;
     }

@@ -1,6 +1,10 @@
 public class GameBoard {
     private int[][] _board;
 
+    public GameBoard(int[][] board) {
+        this._board = board;
+    }
+
     public int[][] board() {
         return _board;
     }
