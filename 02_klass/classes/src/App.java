@@ -1,5 +1,5 @@
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Picture picture = new Picture(2, 2, "picture");
 
         picture.render();

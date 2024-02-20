@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class GameBoard {
     private int[][] _board;
 
@@ -5,15 +7,15 @@ public class GameBoard {
         this._board = board;
     }
 
-    public int[][] board() {
+    public int[][] getBoard() {
         return _board;
     }
 
-    public void board(int[][] board) {
+    public void setBoard(int[][] board) {
         this._board = board;
     }
 
-    public String stringify(Creature[] creatures) {
+    public String stringify(List<Creature> creatures, List<Item> items) {
         StringBuilder sb = new StringBuilder();
         for (int y = 0; y < _board.length; y++) {
             for (int x = 0; x < _board[y].length; x++) {
@@ -42,15 +44,18 @@ public class GameBoard {
                 } else if (_board[y][x] == 11) {
                     symbol = '┼';
                 }
-                // if (y == 0 || y == _board.length - 1) {
-                // symbol = '-';
-                // } else if (x == 0 || x == _board[y].length - 1) {
-                // symbol = '|';
-                // }
+
                 for (Creature creature : creatures) {
-                    if (x == creature.location().x
-                            && y == creature.location().y) {
-                        symbol = creature.symbol();
+                    if (x == creature.getLocation().x
+                            && y == creature.getLocation().y) {
+                        symbol = creature.getSymbol();
+                    }
+                }
+
+                for (Item item : items) {
+                    if (x == item.getLocation().x
+                            && y == item.getLocation().y) {
+                        symbol = item.getSymbol();
                     }
                 }
                 sb.append(symbol);
@@ -58,5 +63,9 @@ public class GameBoard {
             sb.append("\n");
         }
         return sb.toString();
+    }
+
+    public void render(List<Creature> creatures, List<Item> items) {
+        System.err.println(stringify(creatures, items));
     }
 }

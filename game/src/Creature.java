@@ -2,7 +2,7 @@ public class Creature {
     private String _name;
     private char _symbol;
     private Location _location;
-    private Direction _direction;
+    private Direction _direction = Direction.UP;
 
     public Creature(String name, char symbol, Location location) {
         this._name = name;
@@ -10,27 +10,27 @@ public class Creature {
         this._location = location;
     }
 
-    public String name() {
+    public String getName() {
         return _name;
     }
 
-    public void name(String name) {
+    public void setName(String name) {
         this._name = name;
     }
 
-    public Location location() {
+    public Location getLocation() {
         return _location;
     }
 
-    public void location(Location location) {
+    public void setLocation(Location location) {
         this._location = location;
     }
 
-    public char symbol() {
+    public char getSymbol() {
         return _symbol;
     }
 
-    public void symbol(char symbol) {
+    public void setSymbol(char symbol) {
         this._symbol = symbol;
     }
 
@@ -65,11 +65,11 @@ public class Creature {
         this.move(this._direction);
     }
 
-    public Direction direction() {
+    public Direction getDirection() {
         return _direction;
     }
 
-    public void direction(Direction direction) {
+    public void setDirection(Direction direction) {
         this._direction = direction;
     }
 

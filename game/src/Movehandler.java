@@ -2,35 +2,33 @@ public class Movehandler {
 
     public static void move(Direction direction, Creature creature,
             GameBoard gameBoard) {
-        creature.direction(direction);
+        creature.setDirection(direction);
 
         switch (direction) {
             case UP: {
-                if (gameBoard.board()[creature.location().y - 1][creature
-                        .location().x] == 0) {
+                if (gameBoard.getBoard()[creature.getLocation().y - 1][creature
+                        .getLocation().x] == 0) {
                     creature.moveUp();
                 }
                 break;
             }
             case DOWN: {
-                if (gameBoard.board()[creature.location().y + 1][creature
-                        .location().x] == 0) {
+                if (gameBoard.getBoard()[creature.getLocation().y + 1][creature
+                        .getLocation().x] == 0) {
                     creature.moveDown();
                 }
                 break;
             }
             case LEFT: {
-                if (gameBoard
-                        .board()[creature.location().y][creature.location().x
-                                - 1] == 0) {
+                if (gameBoard.getBoard()[creature.getLocation().y][creature
+                        .getLocation().x - 1] == 0) {
                     creature.moveLeft();
                 }
                 break;
             }
             case RIGHT: {
-                if (gameBoard
-                        .board()[creature.location().y][creature.location().x
-                                + 1] == 0) {
+                if (gameBoard.getBoard()[creature.getLocation().y][creature
+                        .getLocation().x + 1] == 0) {
                     creature.moveRight();
                 }
                 break;
@@ -41,6 +39,6 @@ public class Movehandler {
     }
 
     public static void move(Creature creature, GameBoard gameBoard) {
-        Movehandler.move(creature.direction(), creature, gameBoard);
+        Movehandler.move(creature.getDirection(), creature, gameBoard);
     }
 }
