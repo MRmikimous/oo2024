@@ -13,9 +13,6 @@ public class GameBoard {
         this._board = board;
     }
 
-    /*
-     * 1, ─ 2, │ 3, ┎ 4, ┒ 5, ┕ 6, ┛ 7, ┿
-     */
     public String stringify(Creature[] creatures) {
         StringBuilder sb = new StringBuilder();
         for (int y = 0; y < _board.length; y++) {
@@ -40,6 +37,10 @@ public class GameBoard {
                     symbol = '┴';
                 } else if (_board[y][x] == 9) {
                     symbol = '├';
+                } else if (_board[y][x] == 10) {
+                    symbol = '┬';
+                } else if (_board[y][x] == 11) {
+                    symbol = '┼';
                 }
                 // if (y == 0 || y == _board.length - 1) {
                 // symbol = '-';

@@ -6,25 +6,31 @@ public class Movehandler {
 
         switch (direction) {
             case UP: {
-                if (creature.location().y > 1) {
+                if (gameBoard.board()[creature.location().y - 1][creature
+                        .location().x] == 0) {
                     creature.moveUp();
                 }
                 break;
             }
             case DOWN: {
-                if (creature.location().y < gameBoard.board().length - 2) {
+                if (gameBoard.board()[creature.location().y + 1][creature
+                        .location().x] == 0) {
                     creature.moveDown();
                 }
                 break;
             }
             case LEFT: {
-                if (creature.location().x > 1) {
+                if (gameBoard
+                        .board()[creature.location().y][creature.location().x
+                                - 1] == 0) {
                     creature.moveLeft();
                 }
                 break;
             }
             case RIGHT: {
-                if (creature.location().x < gameBoard.board()[0].length - 2) {
+                if (gameBoard
+                        .board()[creature.location().y][creature.location().x
+                                + 1] == 0) {
                     creature.moveRight();
                 }
                 break;
