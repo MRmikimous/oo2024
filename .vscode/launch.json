@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MarauderApplication<Marauder>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "ee.tlu.Marauder.MarauderApplication",
+            "projectName": "Marauder",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
