@@ -1,14 +1,21 @@
 {
     "configurations": [
-        {
-            "type": "java",
-            "name": "Spring Boot-MarauderApplication<Marauder>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "ee.tlu.Marauder.MarauderApplication",
-            "projectName": "Marauder",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
-        }
+      {
+        "type": "java",
+        "name": "ArchonApplication",
+        "request": "launch",
+        "mainClass": "ee.tlu.archon.ArchonApplication",
+        "projectName": "archon"
+      },
+      {
+        "type": "java",
+        "name": "Spring Boot-MarauderApplication<Marauder>",
+        "request": "launch",
+        "cwd": "${workspaceFolder}",
+        "mainClass": "ee.tlu.Marauder.MarauderApplication",
+        "projectName": "Marauder",
+        "args": "",
+        "envFile": "${workspaceFolder}/.env"
+      }
     ]
 }

@@ -6,10 +6,5 @@
     },
     "python.analysis.autoImportCompletions": true,
     "python.analysis.typeCheckingMode": "basic",
-    "java.compile.nullAnalysis.mode": "automatic",
-    "java.project.sourcePaths": [
-        "04_proovikontrolltoo1/polygon/src",
-        "02_klass/classes/src",
-        "06_liides/Marauder/src/main/java/ee/tlu/Marauder"
-    ]
+    "java.compile.nullAnalysis.mode": "automatic"
 }
