@@ -34,7 +34,6 @@ public class NumberController {
         return numbers;
     }
 
-
     @DeleteMapping("numbers")
     public List<Integer> deleteNumbers() {
         numbers.clear();
@@ -69,6 +68,5 @@ public class NumberController {
     public double getAverage() {
         return getTotal() / numbers.size();
     }
-
 
 }
